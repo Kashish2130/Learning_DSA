@@ -29,29 +29,37 @@ void moveZeroes(vector<int> &nums)
 
 void moveZeroes(vector<int> &nums)
 {
-    int j = -1;
-    for (int i = 0; i < nums.size(); i++)
-    {
-        if (nums[i] == 0)
-        {
-            j = i;
-            break;
-        }
-    }
+    int j = 0; // position to place the next non-zero
 
-    if (j == -1)
-    {
-        return;
-    }
-
-    for (int i = j + 1; i < nums.size(); i++)
+    for (int i = 0; i < nums.size(); ++i)
     {
         if (nums[i] != 0)
         {
-            int temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
+            swap(nums[i], nums[j]);
             j++;
         }
+    }
+}
+
+or
+
+void MoveZeroesToEnd(vector<int> &arr)
+{
+    // 2 pointers approach
+    // pointer i Determines the correct position of the nonzero element
+    // pointer j will traverse and finds the next nonzero element
+    int i = 0;
+    for (int j = 0; j < arr.size(); j++)
+    {
+        if (arr[j] != 0)
+        {
+            arr[i] = arr[j];
+            i++;
+        }
+    }
+    while (i < arr.size())
+    {
+        arr[i] = 0;
+        i++;    
     }
 }

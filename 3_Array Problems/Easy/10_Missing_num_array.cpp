@@ -1,6 +1,10 @@
 // brute force
 // tc : o(n^2)
 // sc:o(1)
+//give example array in which a number is missing
+// 0,1,2,3,4,6,7,8,9
+
+
 int missingNumber(vector<int> &nums)
 {
     int n = nums.size();
@@ -64,6 +68,11 @@ int missingNumber(vector<int> &nums)
 // USING XOR
 // TC : o(N)
 // sc : o(1)
+//tell me if i do xor of 4 and 4 what will be the result?
+// 0^1^2^3^4 = 0
+// 0^1^3^4 = 2
+
+
 int missingNumber(vector<int> &nums)
 {
     int n = nums.size();
@@ -72,10 +81,12 @@ int missingNumber(vector<int> &nums)
     {
         xorResult ^= i;
     }
+
     for (int num : nums)
     {
         xorResult ^= num;
     }
+
     return xorResult;
 }
 

@@ -40,3 +40,39 @@ int main()
     }
     return 0;
 }
+
+
+//ANOTHER LOGIC FOR INSERTION SORT (i remember this because this is easy to create on your own)
+#include <bits/stdc++.h>
+using namespace std;
+
+void insertion_sort(vector<int> &v, int size)
+{
+
+    int j;
+    for (int i = 1; i < size; i++)
+    {
+        int key = v[i];
+        for (j = i - 1; j >= 0; j--)
+        {
+            if (key >= v[j])
+            {
+                break;
+            }
+
+            v[j + 1] = v[j];
+        }
+
+        v[j + 1] = key;
+    }
+}
+
+int main()
+{
+    vector<int> v = {31, 9, 42, 71, 16};
+    insertion_sort(v, v.size());
+    for (int i = 0; i < v.size(); i++)
+    {
+        cout << v[i] << " ";
+    }
+}
