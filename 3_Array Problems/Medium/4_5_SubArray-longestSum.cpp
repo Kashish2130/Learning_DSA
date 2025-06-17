@@ -1,3 +1,5 @@
+//?Given an integer array nums, find the subarray with the largest sum, and return its sum.
+
 //! THIS CODE IS FOR FINDING THE SUBARRAY WITH THE MAXIMUM SUM
 //* The code uses brute force and optimal approaches to find the maximum sum subarray.
 //* The brute force approach generates all possible subarrays and calculates their sums.
@@ -57,21 +59,6 @@ pair<vector<int>, int> maxSubArrayWithMap(vector<int> &nums)
     }
 
     return {maxSubarray, maxSum};
-}
-
-int main()
-{
-    vector<int> nums = {2, 3, -2, 5, -1};
-    auto result = maxSubArrayWithMap(nums);
-
-    cout << "Subarray with max sum: ";
-    for (int num : result.first)
-    {
-        cout << num << " ";
-    }
-    cout << "\nMax Sum: " << result.second << endl;
-
-    return 0;
 }
 
 // brute force
