@@ -129,7 +129,9 @@ public:
                 ansEnd = i;
             }
 
-            if (sum < 0)
+            if (sum < 0) 
+            //this may happen when the array contains negative numbers as well!
+            //can refer to images folder for example!
             {
                 sum = 0;
             }

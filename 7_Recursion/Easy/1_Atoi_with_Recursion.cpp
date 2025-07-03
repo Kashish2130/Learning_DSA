@@ -1,8 +1,7 @@
 //? ATOI WITH RECURSION
 
-
-//tc :// O(n) where n is the length of the string
-//sc :// O(1) as we are using constant space for the result and sign
+//tc : O(n) where n is the length of the string based on the number of characters we traverse and number of recursive calls made
+//sc : O(1) as we are using constant space for the result and sign
 class Solution {
 public:
     int helper(string s, int index, int result, int sign) {

@@ -3,6 +3,8 @@
 //tc: O(3n)
 //sc: O(1)
 
+//for revision - refer video!!
+
 #include <vector>
 #include <algorithm>
 
@@ -12,7 +14,7 @@ public:
         int index = -1;
         int n = nums.size();
 
-        //* finding the break point  =  longest prefix
+        //* finding the break point  =  longest prefix match
         for (int i = n - 2; i >= 0; i--) {
             if (nums[i] < nums[i + 1]) {
                 index = i;
@@ -36,6 +38,9 @@ public:
                 break;
             }
         }
+        //for ex : 2|1|7|3|4|0|0| is the array
+        //now tell 1 will be swapped with 4 or 3 and how?
+        //but according to the above logic dont you think any numbr gretaer than 1 would be swpped but not just the closest one
 
         //* reversing the suffix after the break point to get the next permutation
         //* this is done to get the smallest permutation after the break point

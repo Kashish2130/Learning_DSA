@@ -1,3 +1,8 @@
+//? Leaders in an array
+//A leader is the one element which is greater than all the elements on its right.
+//Last element is always a leader.
+
+
 #include <vector>
 using namespace std;
 
