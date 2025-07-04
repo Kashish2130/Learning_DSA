@@ -5,7 +5,7 @@ public:
     {
         // find the middle of the linked list
         ListNode *slow = head, *fast = head;
-        while (fast != nu; llptr && fast->next != nullptr)
+        while (fast != nullptr && fast->next != nullptr)
         {
             slow = slow->next;
             fast = fast->next->next;

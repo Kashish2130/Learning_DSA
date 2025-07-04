@@ -1,0 +1,68 @@
+// brute force
+// tc : O(n^2)
+// sc : O(n)
+class Solution
+{
+public:
+    char kthCharacter(int k)
+    {
+        string word = "a";
+        string temp = "";
+        int size = 1;
+        // k = 3
+        while (size <= k)
+        {
+            temp = "";
+            for (char c : word)
+            {
+                temp += c + 1;
+                size++;
+            }
+            word += temp;
+        }
+
+        return word[k - 1];
+    }
+};
+
+// optimal
+// tc : O(logn)
+// sc : O(1)
+
+// which type of recursion is used here?
+//  This is an example of tail recursion, where the recursive call is the last operation in the function.
+//  Tail recursion is a specific case of recursion where the recursive call is the final action in the function.
+//  This allows for optimizations by the compiler or interpreter, potentially reducing the overhead of maintaining multiple stack frames.
+//  Tail recursion can be more efficient than regular recursion in some cases, as it can be optimized
+//  to avoid growing the call stack, leading to better performance and reduced memory usage.
+//  compared to the brute force approach.
+
+class Solution
+{
+public:
+    char kthCharacter(int k)
+    {
+        return getChar(k, 'a');
+    }
+
+    char getChar(int k, char current)
+    {
+        if (k == 1)
+            return current;
+
+        // Length of word is always 2^n, so find largest power of 2 < k
+        int len = 1;
+        while (len * 2 < k)
+            len *= 2;
+
+        if (k <= len)
+        {
+            return getChar(k, current); // First half: same word
+        }
+        else
+        {
+            char nextChar = (current == 'z') ? 'a' : current + 1;
+            return getChar(k - len, nextChar); // Second half: shifted word
+        }
+    }
+};
