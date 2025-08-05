@@ -2,6 +2,16 @@
 //tc : o(n)
 //sc : O(1)
 // simpler to use but two pass
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
