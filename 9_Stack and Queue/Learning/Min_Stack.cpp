@@ -39,3 +39,10 @@ public:
         return top.second;
     }
 };
+
+// !Correct Approach:
+
+The pair approach (value, current min) allows you to always know the minimum at each stack level.
+Alternatively, you can use two stacks: one for all values, one for the current minimums.
+
+//* but if you use monotonic stack approach, there you are more prone to not support all the stack operations also the data will be lost so that is not the right way!
